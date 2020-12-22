@@ -2,6 +2,7 @@ version: "2"
 services:
   rancher:
     image: novinrepo:8082/docker/rancher/rancher:v2.5.3
+    container_name: rancher
     volumes:
       - $PWD/registries.yaml:/etc/rancher/k3s/registries.yaml
       - $PWD/config.toml.tmpl:/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
