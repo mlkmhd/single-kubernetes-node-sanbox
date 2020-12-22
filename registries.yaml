@@ -1,0 +1,4 @@
+mirrors:
+  "novinrepo:8082":
+    endpoint:
+      - "http://novinrepo:8082"

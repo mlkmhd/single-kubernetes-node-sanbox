@@ -1,0 +1,15 @@
+version: "2"
+services:
+  rancher:
+    image: novinrepo:8082/docker/rancher/rancher:v2.5.3
+    volumes:
+      - $PWD/registries.yaml:/etc/rancher/k3s/registries.yaml
+      - $PWD/config.toml.tmpl:/var/lib/rancher/k3s/agent/etc/containerd/config.toml.tmpl
+    ports:
+      - 80:80
+      - 443:443
+      - 6443:6443
+    restart: always
+    privileged: true
+    extra_hosts:
+      - "novinrepo: 192.168.39.16"
